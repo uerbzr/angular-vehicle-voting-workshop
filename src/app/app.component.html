@@ -1,0 +1,14 @@
+<div class="add-vehicle">
+  <input
+    type="text"
+    [(ngModel)]="newVehicle"
+    placeholder="Add name of vehicle"
+  />
+  <button (click)="addVehicle()">Add</button>
+</div>
+<app-vehicle
+  *ngFor="let v of vehicles"
+  [vehicle]="v"
+  [numberofvotes]="voteCount(v)"
+  (voteVehicle)="voteVehicle($event)"
+></app-vehicle>
